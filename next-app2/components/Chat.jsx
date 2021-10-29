@@ -10,8 +10,7 @@ const ChatContainer = styled.div`
     left: 90px;
     right : 75px;
     height: 100%;
-    display: flex;
-    border-radius: 15px;
+    border-radius: 18px;
     border-left : 1.5px solid ${BORDER};
     border-right : 1.5px solid ${BORDER};
     padding : 20px 20px;
@@ -55,15 +54,15 @@ const ChatContainer = styled.div`
                         width: 100%;
                         justify-content: center;
                         margin-bottom : 20px;
+                        margin-top: 10px;
                     & .User__setting{
                         display : flex;
                         height : 20px;
-                        padding-left : 30px;
+                       
                     }
         
                     & .user__photo__container{
                         position  : relative;
-                        margin-top: 20px;
                         width : 100%;
                         display: flex;
                         align-items : center;
@@ -92,7 +91,6 @@ const ChatContainer = styled.div`
                             display  : flex;
                             flex-direction : column;
                             align-items: center;
-                            padding-rigth: 150px;
                             & h1 {
                                 font-weight : 500;
                             }
@@ -188,24 +186,23 @@ const UserActivity =  ({isOnline = false , children, name}) =>{
 
 const Chat = () => {
     return (<ChatContainer>
-        <nav className='chatDescription'>
-            <div className ='chatDescriptionHeader'>
-                <button>
-                    <ChevronLeft size="18px"/>
-                </button>
-                <h1>Chat</h1>
-            </div>
-            <div className ='chatDescriptionBody'>
-            
-            <UserActivity isOnline = {true} name={'Jontray Arnold'}>
-                <img src='/images/15.jpg' alt="Photo d'utilisateur" className="user__photo"/>
-            </UserActivity>
-            {/* <a className='User__setting'><Settings size='16px' color ='#B6B6B6'/></a> */}
-            </div>
-            <div className='chatSearchChat'>
-                <SearchBar />
-            </div>
-        </nav>
+            <nav className='chatDescription'>
+                <div className ='chatDescriptionHeader'>
+                    <button>
+                        <ChevronLeft size="18px"/>
+                    </button>
+                    <h1>Chat</h1>
+                </div>
+                <div className ='chatDescriptionBody'>
+                    <UserActivity isOnline = {true} name={'Jontray Arnold'}>
+                        <img src='/images/15.jpg' alt="Photo d'utilisateur" className="user__photo"/>
+                    </UserActivity>
+                    <a className='User__setting'><Settings size='16px' color ='#B6B6B6'/></a> 
+                </div>
+                <div className='chatSearchChat'>
+                    <SearchBar />
+                </div>
+            </nav>
     </ChatContainer>)
 }
 

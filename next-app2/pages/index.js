@@ -1,11 +1,11 @@
 import Sidebar from "../components/Sidebar"
 import Main from "../components/Main"
-import Chat from "../components/Chat"
+import UserChat from "../components/UserChat"
 
 export default function Home() {
   return (<>
          <Sidebar/>
-         <Chat/>
+         <UserChat/>
          <Main/>
          </>
   )
