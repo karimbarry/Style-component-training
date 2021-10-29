@@ -116,6 +116,9 @@ const ChatContainer = styled.div`
                 }
             }
             & .chatSearchChat {
+                background-color: #f0f4f9;
+                border-radius : 10px;
+                width: 100%;
                 & div {
                     display : flex;
                     align-items: center;
@@ -123,13 +126,14 @@ const ChatContainer = styled.div`
                     border-radius: 10px;
                 }
                 & .btn_search {
-
+                    padding-right : 10px;
                 }
                 & .search_input {
                     width: 100%;
                     height: 2px;
                     border : none;
                     background-color: #f0f4f9;
+                    border-radius : 10px;
                     padding: 20px;
                     outline: 0;
                 }
