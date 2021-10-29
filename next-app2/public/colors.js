@@ -1,0 +1,7 @@
+export const BG_COLOR = "#F6F8FA"
+export const PRIMARY_COLOR = "#1dbf73"
+export const TERTIARY_COLOR = "#EDFCF5"
+export const RED = "#db4c3f"
+export const COLOR = "#121c42"
+export const LIGHT_COLOR = "#121c4299"
+export const BORDER = "#EEF0FC"

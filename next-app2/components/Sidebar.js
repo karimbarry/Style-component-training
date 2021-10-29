@@ -1,111 +1,104 @@
+import React from 'react'
 import styled from 'styled-components'
-import { Compass, Triangle,Clipboard, Eye, Users, Video, BarChart2 } from 'react-feather';
+import { BORDER, PRIMARY_COLOR, TERTIARY_COLOR } from '../public/colors'
+import Logo from './Logo'
+import { Compass,Clipboard, Eye, Users, Video, BarChart2 } from 'react-feather'
 
-const Link = ({className , children }) => (
-    <a className = {className}>
-        {children}
-    </a>
-  );
-
-const Div = styled.nav`
-    width : 60px;
+const NavContainer = styled.nav`
+    position : fixed;
+    padding-top: 40px;
+    background : #fff;
+    width : 90px;
     height : 100%;
-    border-radius : 5px;
-    background: ${props => props.primary ? "#e1f3f2" : "none"};
     display: flex;
+    flex-direction : column;
     align-items: center;
-    justify-content: center;
-`;
+    justify-content : space-between;
 
-  
-const StyledLink = styled(Link)`
-    height : 60px;
-    width : 100%;
-    display : flex;
-    align-items center;
-    justify-content: center;
-    color : #dcdfe6;
-    border-right: ${props => props.primary ? "5px solid #00a48a" : "none"};
-    border-radius: ${props => props.primary ? "3px" : "none"};
-`;
-const StyledContain = styled.div`
-    border-radius: 3px;
-    width : 100px;
-    height : 100%;
-    display : flex;
-    align-items: center;
-    flex-direction: column;
+    & div {
+        width : 100%;
+        & .link {
+            height : 55px;
+            display : flex;
+            justify-content: center;
+            align-items: center;
+        }
+        & .activeLink {
+            height : 75px;
+            display : flex;
+            justify-content: center;
+            align-items: center;
+            border-right : 3.5px solid ${PRIMARY_COLOR};
+        }
+        & .link:hover {
+            cursor: pointer;
+            height : 75px;
+            display : flex;
+            justify-content: center;
+            align-items: center;
+            border-right : 3.5px solid ${PRIMARY_COLOR};
 
-`;
-const StyledContainer = styled(StyledContain)`
-    padding : 40px;
-`;
-const StyledContainHead = styled(StyledContain)`
-    color: green;
-    margin-bottom : 70px;
-
-`;
-const StyledContainFoot = styled(StyledContain)`
-    margin-top : 70px;
-`;
-const Sidebar= () => {
-    return (
-    <StyledContainer>
-        <StyledContainHead>
-            <StyledLink>
-                <Div>
-                    <Triangle size='30px' color='green'/>
-                    <Triangle size='30px' color='orange' style={{transform: 'rotate(180deg)'}}/>
-                </Div>
-            </StyledLink> 
-        </StyledContainHead>
-        <StyledContain>
-
-                <StyledLink>
-                    <Div>
-                        <Compass/>
-                    </Div>
-                </StyledLink> 
-
-                <StyledLink>
-                    <Div>
-                        <Clipboard/>
-                    </Div>
-                </StyledLink> 
-
-                <StyledLink>
-                    <Div>
-                        <Eye/>
-                    </Div>
-                </StyledLink> 
-
-                <StyledLink style={{backgroundColor : 'red'}} primary>
-                    <Div primary>
-                        <Users color ='green'/>
-                    </Div>
-                </StyledLink> 
-
-                <StyledLink>
-                    <Div>
-                        <BarChart2/>
-                    </Div>
-                </StyledLink> 
-
-                <StyledLink>
-                    <Div>
-                        <Video/>
-                    </Div>
-                </StyledLink> 
-
-        </StyledContain>
-        <StyledContainFoot>
-            <StyledLink>
-                <img src="/images/3.jpg" alt="Image de l'utilisateur" height='40px' width='40px' style={{borderRadius : '50px'}} />
-            </StyledLink>
-        </StyledContainFoot>
-
-    </StyledContainer>
+            & .icon {
+                background: ${TERTIARY_COLOR};
+                transition-duration: 0.5s;
+            }
+        }
+    }
     
-           )
+    & a {
+        display : bloc;
+        
+        & .icon{
+            display : flex;
+            align-items: center;
+            justify-content : center;
+            width: 60px;
+            height: 57px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &.active {
+            & .icon{
+                background: ${TERTIARY_COLOR}
+            }
+
+        }
+    }
+    & img.user__photo {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 40px;
+    }
+`
+
+const NavLink = ({href='', isActive= false, children}) => {
+    return <div href={href} className='button'>
+        <div className={isActive ? "activeLink" : "link"}>
+        <a className={isActive ? "active" : ""}>
+            <span className='icon'>{React.cloneElement(children, {color: isActive ? PRIMARY_COLOR : '#B6B6B6'})}</span>
+        </a>
+        </div>
+    </div>
 }
+
+const Sidebar = () => {
+    return <NavContainer>
+        <Logo/>
+        <div className='nav__links'>
+            <NavLink><Compass size='20px'/></NavLink>
+            <NavLink><Clipboard size='20px'/></NavLink>
+            <NavLink><Eye size='20px'/></NavLink>
+            <NavLink isActive={true}><Users size='20px'/></NavLink>
+            <NavLink><BarChart2 size='20px'/></NavLink>
+            <NavLink><Video size='20px'/></NavLink>
+        </div>
+        <img src='/images/15.jpg' alt="Photo d'utilisateur" className="user__photo"/>
+    </NavContainer>
+}
+
 export default Sidebar
