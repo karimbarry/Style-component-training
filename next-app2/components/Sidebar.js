@@ -32,12 +32,10 @@ const NavContainer = styled.nav`
         }
         & .link:hover {
             cursor: pointer;
-            height : 75px;
+            height : 55px;
             display : flex;
             justify-content: center;
             align-items: center;
-            border-right : 3.5px solid ${PRIMARY_COLOR};
-
             & .icon {
                 background: ${TERTIARY_COLOR};
                 transition-duration: 0.5s;

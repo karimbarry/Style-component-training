@@ -54,6 +54,7 @@ const ChatContainer = styled.div`
                         display : flex;
                         width: 100%;
                         justify-content: center;
+                        margin-bottom : 20px;
                     & .User__setting{
                         display : flex;
                         height : 20px;
@@ -63,7 +64,13 @@ const ChatContainer = styled.div`
                     & .user__photo__container{
                         position  : relative;
                         margin-top: 20px;
-            
+                        width : 100%;
+                        display: flex;
+                        align-items : center;
+                        flex-direction : column;
+                        & .user__photoT{
+                            position : relative;
+                        }
                         & img {
                             height : 90px;
                             width : 90px;
@@ -81,11 +88,8 @@ const ChatContainer = styled.div`
                             background-color: ${PRIMARY_COLOR};
                             }
                         & .statu__User{
-                            position : absolute;
-                            width : 180px;
                             height  : auto;
                             display  : flex;
-                            margin-left: -40px;
                             flex-direction : column;
                             align-items: center;
                             padding-rigth: 150px;
@@ -112,20 +116,22 @@ const ChatContainer = styled.div`
                 }
             }
             & .chatSearchChat {
+                & div {
+                    display : flex;
+                    align-items: center;
+                    background-color: #f0f4f9;
+                    border-radius: 10px;
+                }
                 & .btn_search {
-                    position: absolute;
-                    margin-top: 12px;
-                    margin-left: 200px;
+
                 }
                 & .search_input {
                     width: 100%;
-                    height: 5px;
-                    border-radius: 10px;
+                    height: 2px;
                     border : none;
                     background-color: #f0f4f9;
-                    padding: 25px;
+                    padding: 20px;
                     outline: 0;
-                    padding-left: 45px;
                 }
             }
          
@@ -141,16 +147,17 @@ const SearchBar = () => {
 		setInputValue(e.target.value)
 	}
     return <div>
-            <a href='#' className='btn_search'>
-                <Search   
-                set="light"
-                color='#B6B6B6'/>
-            </a>
+            
             <input 
                 onChange={handleInput} 
                 className='search_input'
                 placeholder='Search'>
             </input>
+            <a href='#' className='btn_search'>
+                <Search   
+                set="light"
+                color='#B6B6B6'/>
+            </a>
     </div>
 }
 const UserActivity =  ({isOnline = false , children, name}) =>{
