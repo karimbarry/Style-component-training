@@ -2,7 +2,7 @@ import React from 'react'
 import {useState} from 'react'
 import styled from 'styled-components'
 import { BORDER, LIGHT_COLOR, PRIMARY_COLOR, TERTIARY_COLOR } from '../public/colors'
-import { Send } from 'react-feather'
+import { Send, Paperclip,Smile } from 'react-feather'
 
 const ChatBlocContainer = styled.div`
     height : 660px;
@@ -61,23 +61,49 @@ const ChatBlocContainer = styled.div`
             height : 15%;
             display : flex;
             align-items: center;
-            & div{
-                height: 80px;
+            padding : 0 40px;
+            & .Message__inputContainer{
+                height: 60px;
                 width : 100%;
-                padding : 0 20px;
+                display: flex;
+                align-items:center;
+                padding : 0 10px;
+                border-radius : 10px;
+                background-color: #ffffff;
+                box-shadow: 2px 7px 17px -10px rgba(0,0,0,0.35);
             }
             & .Message_input {
                 width: 100%;
                 height: 60px;
                 border : none;
-                background-color: #ffffff;
                 border-radius : 10px;
                 padding : 0 40px;
                 outline: 0;
-                box-shadow: 2px 7px 17px -10px rgba(0,0,0,0.35);
+                
 
             }
+            & .Tools {
+                display: flex;
+                height : 60px;
+                width: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                & button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 8px;
+                    border: none;
+                    background : ${PRIMARY_COLOR};
+                    & :hover{
+                        cursor : pointer;
+                    }
+            }
         }
+
     }
 `
 const Button = ({children, isActiveButton = false}) => {
@@ -91,8 +117,13 @@ const MessageWriteBar = () => {
 	function handleInput(e) {
 		setInputValue(e.target.value)
 	}
-    return <div>
+    return <div className='Message__inputContainer'>
                 <input onChange={handleInput} className='Message_input' placeholder='Write your message...'></input>
+                <div className='Tools'>
+                        <Smile size='20px' color='#b9bcbe'/>
+                        <Paperclip size='20px' color='#b9bcbe'/>
+                       <button><Send size='24px' fill='#ffffff' color={PRIMARY_COLOR}/></button>
+                    </div>
             </div>
 }
 const ChatBloc = () => {
@@ -112,6 +143,7 @@ const ChatBloc = () => {
                 <div className='bloc__containerBody'></div>
                 <div className='bloc__containerFoot'>
                    < MessageWriteBar />
+
                 </div>
                 
             </div>
