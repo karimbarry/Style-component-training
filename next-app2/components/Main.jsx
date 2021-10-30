@@ -15,7 +15,7 @@ const ChatDetailsContainer = styled.div`
     align-items: center;
     padding-top: 20px;
     & .header{
-        height: 80px;
+        height: 72px;
         display: flex;
         justify-content: center;
         align-items: center;

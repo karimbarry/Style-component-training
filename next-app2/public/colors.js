@@ -1,5 +1,5 @@
 export const BG_COLOR = "#F6F8FA"
-export const PRIMARY_COLOR = "#1dbf73"
+export const PRIMARY_COLOR = "#00a389"
 export const TERTIARY_COLOR = "#EDFCF5"
 export const RED = "#db4c3f"
 export const COLOR = "#121c42"

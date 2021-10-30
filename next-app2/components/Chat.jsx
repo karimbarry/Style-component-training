@@ -3,17 +3,20 @@ import {useState} from 'react'
 import styled from 'styled-components'
 import { BORDER, LIGHT_COLOR, PRIMARY_COLOR, TERTIARY_COLOR } from '../public/colors'
 import { ChevronLeft, ChevronDown, Settings, Search } from 'react-feather'
+import ChatList from './ChatList'
+import ChatBloc from './ChatBloc'
 
 
 const ChatContainer = styled.div`
+    display: flex;
     position: absolute;
     left: 90px;
     right : 75px;
     height: 100%;
     border-radius: 18px;
     border-left : 1.5px solid ${BORDER};
-    border-right : 1.5px solid ${BORDER};
     padding : 20px 20px;
+    padding-right : 0;
         & .chatDescription {
             height : 100%;
             width : 25%;
@@ -100,7 +103,7 @@ const ChatContainer = styled.div`
                                 height : 30px;
                                 border-radius : 8px;
                                 color : ${PRIMARY_COLOR};
-                                background : ${TERTIARY_COLOR};
+                                background : #bfe8e1;
                                 & div {
                                     display: flex;
                                     justify-content: space-around;
@@ -202,7 +205,9 @@ const Chat = () => {
                 <div className='chatSearchChat'>
                     <SearchBar />
                 </div>
+                <ChatList/>
             </nav>
+            <ChatBloc/>
     </ChatContainer>)
 }
 
