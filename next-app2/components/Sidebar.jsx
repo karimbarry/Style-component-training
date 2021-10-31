@@ -60,7 +60,10 @@ const NavContainer = styled.nav`
         }
         &.active {
             & .icon{
-                background: ${TERTIARY_COLOR}
+                background: ${TERTIARY_COLOR};
+                & svg {
+                    
+                }
             }
 
         }
@@ -88,7 +91,7 @@ const Sidebar = () => {
     return <NavContainer>
         <Logo/>
         <div className='nav__links'>
-            <NavLink><Compass size='20px'/></NavLink>
+            <NavLink ><Compass size='20px'/></NavLink>
             <NavLink><Clipboard size='20px'/></NavLink>
             <NavLink><Eye size='20px'/></NavLink>
             <NavLink isActive={true}><Users size='20px'/></NavLink>

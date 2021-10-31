@@ -47,6 +47,9 @@ const ChatListContainer = styled.div`
             }
         }
         & .actionUser {
+            & :hover{
+                cursor: pointer;
+            }
             & nav {
             display: flex;
             width: 100%;
@@ -120,7 +123,7 @@ const ChatList = () => {
                     </div>
             </div>
             <div className='MessagesList'>
-                <Action img={<img src='/images/10.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
+                <Action img={<img src='/images/30.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
                 name={'Real Estate deals'}
                 actionDescription ={"Typing..."}
                 time={'11:15'} 
@@ -133,8 +136,8 @@ const ChatList = () => {
                 name={'Tamara Schevensko'}
                 actionDescription ={"Came take her..."}
                 time={'10:43'} />
-                <Action img={<img src='/images/5.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
-                name={'Kate Jonhson'}
+                <Action img={<img src='/images/3.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
+                name={'Kate Harley'}
                 actionDescription ={"I will go to the..."}
                 time={'10:42'} />
                 <Action img={<img src='/images/28.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
@@ -148,6 +151,25 @@ const ChatList = () => {
                 name={'Aryana Monroe'}
                 actionDescription ={"So good..."}
                 time={'9:40'} />
+                <Action img={<img src='/images/21.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
+                name={'Harly King'}
+                actionDescription ={"good job awes..."}
+                time={'8:41'} /><Action img={<img src='/images/20.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
+                name={'Jeyna rey'}
+                actionDescription ={"So good u are..."}
+                time={'8:40'} /><Action img={<img src='/images/17.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
+                name={'Brooke harson'}
+                actionDescription ={"no friend is a..."}
+                time={'8:31'} /><Action img={<img src='/images/6.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
+                name={'Cersei Monroe'}
+                actionDescription ={"Stuf her compan..."}
+                time={'8:20'} /><Action img={<img src='/images/9.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
+                name={'Sacha Cooper'}
+                actionDescription ={"No bad so..."}
+                time={'7:41'} /><Action img={<img src='/images/12.jpg' alt="Photo d'utilisateur" className="user__photo__chatList"/>} 
+                name={'Stephy Rose'}
+                actionDescription ={"Bye..."}
+                time={'6:40'} />
             </div>
            </ChatListContainer>
 

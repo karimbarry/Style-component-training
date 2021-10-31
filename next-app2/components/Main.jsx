@@ -5,7 +5,6 @@ import { BORDER, LIGHT_COLOR, PRIMARY_COLOR, TERTIARY_COLOR } from '../public/co
 
 const ChatDetailsContainer = styled.div`
     position: fixed;
-    top: 0;
     right: 0;
     height: 100%;
     width: 75px;
@@ -15,11 +14,13 @@ const ChatDetailsContainer = styled.div`
     align-items: center;
     padding-top: 20px;
     & .header{
-        height: 72px;
         display: flex;
-        justify-content: center;
         align-items: center;
-        border-bottom: 1px solid ${BORDER};
+        height: 57px;
+        padding-top: 30px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid #EEF0FC;
+        margin-bottom: 30px;
         & button{
             width: 40px;
             height: 40px;
@@ -30,8 +31,12 @@ const ChatDetailsContainer = styled.div`
         height: 45px;
         border-radius: 50%;
         object-fit: cover;
-        margin-top: 40px;
         margin-bottom: 25px;
+    }
+    & .actions {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
     }
     & h3{
         font-weight: 500;
@@ -49,6 +54,7 @@ const ChatDetailsContainer = styled.div`
         border: none;
         margin-bottom: 20px;
         color: ${LIGHT_COLOR};
+
         & :hover{
             cursor : pointer;
         }
